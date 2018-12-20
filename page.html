@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>欢迎来到汉皇</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <link rel="icon" href="123.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/page.css">
+    <script>
+        var pixelRatio = 1 / window.devicePixelRatio; //还原设备的真实分辨率；
+        //devicePixelRatio设备的像素比；
+        document.write('<meta name="viewport" content="width=device-width,initial-scale=' + pixelRatio + ',minimum-scale=' + pixelRatio + ',maximum-scale=' + pixelRatio + '" />');
+        var html = document.getElementsByTagName('html')[0];
+        var pageWidth = html.getBoundingClientRect().width;
+        html.style.fontSize = pageWidth / 10 + "px";
+    </script>
+    <style>
+        .style{color:#15C5DC;
+            border-bottom:2px solid #15C5DC;}
+    </style>
+</head>
+<body>
+    <!-- 页面顶部 -->
+        <header id="top">
+                <!-- 图片 -->
+                    <div><a href="">&lt;&nbsp;<span>返回</span></a></div>
+                    <div>我要加友</div>
+        </header>
+        <!-- LOGO和搜索框 -->
+        <div id="top_main">
+            <ul class="box">
+                <li>全部</li>
+                <li>主动</li>
+                <li>被动</li>
+            </ul>
+          <!--   //*****/ -->
+          <div class="only">
+                <ul class="list">
+                        <li>
+                            <img src="123.jpg">
+                            <b>183****8006</b>
+                            <span id="date"></span>
+                        </li>
+                        <li>
+                            <img src="123.jpg">
+                            <b>183****8006</b>
+                            <span id="dat"></span>
+                        </li>
+                        <li>
+                            <img src="123.jpg">
+                            <b>183****8006</b>
+                            <span id="da"></span>
+                        </li>
+                        <li>
+                            <img src="123.jpg">
+                            <b>183****8006</b>
+                            <span id="d"></span>
+                        </li> 
+                </ul>
+                 <ul class="list" style="display:none">
+                        <li>
+                            <img src="img/a5.jpg">
+                            <b>186****8006</b>
+                            <span id="toyoto"></span>
+                        </li>
+                        <li>
+                            <img src="img/a5.jpg">
+                            <b>183****8006</b>
+                            <span id="tyt"></span>
+                        </li>
+                        <li>
+                            <img src="img/a3.jpg">
+                            <b>186****8006</b>
+                            <span id="ty"></span>
+                        </li>
+                        <li>
+                            <img src="img/a2.jpg">
+                            <b>186****8006</b>
+                            <<span id="to"></span>
+                        </li> 
+                </ul>
+                 <ul class="list" style="display:none">
+                        <li>
+                            <img src="img/a1.jpg">
+                            <b>189****8006</b>
+                            <span id="time"></span>
+                        </li>
+                        <li>
+                            <img src="img/a2.jpg">
+                            <b>189****8006</b>
+                            <span id="tim"></span>
+                        </li>
+                        <li>
+                            <img src="img/a3.jpg">
+                            <b>186****8006</b>
+                            <span id="ti">2019-12-30 21:22:22</span>
+                        </li>
+                        <li>
+                            <img src="img/a2.jpg">
+                            <b>189****8006</b>
+                            <span id="t"></span>
+                        </li> 
+                </ul>
+            </div>
+        </div>
+       
+        <script src="js/jquery-1.11.3.js"></script>
+        <script>
+
+        $(function(){
+            $("#top_main>.box>li").click(function(){
+                var num = $(this).index();
+                $(this).addClass('style').siblings().removeClass('style');
+               
+                $('.list').eq(num).show().siblings().hide();
+            });
+
+        });
+    
+        // 计时器
+        setInterval("clock()",100);
+
+        function clock(){
+            function $(id) {
+                return document.getElementById(id);
+            }
+            // var num = 
+            var date = new Date();
+            var y = date.getFullYear();
+            var m = date.getMonth()+1;
+            var d = date.getDate();
+            var h = date.getHours();
+            var s = date.getMinutes();
+            var ms = date.getSeconds();
+
+            //时分秒加0设置
+            var h = h>9 ?h : "0"+h;
+            var s = s>9 ?s : "0"+s;
+            var ms = ms>9 ? ms : "0"+ms;
+
+            var total = y+"年"+m+"月"+d+"日"+h+":"+s+":"+ms;
+            $('time').innerHTML = total;
+            $('tim').innerHTML = total;
+            $('ti').innerHTML = total;
+            $('t').innerHTML = total;
+
+            $('toyoto').innerHTML = total;
+            $('tyt').innerHTML = total;
+            $('ty').innerHTML = total;
+            $('to').innerHTML = total;
+
+            $('date').innerHTML = total;
+            $('dat').innerHTML = total;
+            $('da').innerHTML = total;
+            $('d').innerHTML = total;
+        }
+        </script>
+</body>
+</html>
